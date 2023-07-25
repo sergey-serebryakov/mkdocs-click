@@ -156,6 +156,8 @@ def _make_description(ctx: click.Context, remove_ascii_art: bool = False) -> Ite
     if not help_string:
         return
 
+    help_string = help_string.split("\f")[0]
+
     # https://github.com/pallets/click/pull/2151
     help_string = inspect.cleandoc(help_string)
 
